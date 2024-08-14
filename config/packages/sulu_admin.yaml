@@ -6,3 +6,9 @@ sulu_admin:
     lists:
         directories:
             - "%kernel.project_dir%/config/lists"
+
+sulu_core:
+    locales:
+        pl: Polski
+    translations:
+        - pl
