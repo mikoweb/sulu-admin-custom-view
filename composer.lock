@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c0be07b81175400b83c761e6bad1740d",
+    "content-hash": "c8407ef217e80a42841023c80d993e09",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -13745,6 +13745,86 @@
             "time": "2020-09-28T06:39:44+00:00"
         },
         {
+            "name": "squizlabs/php_codesniffer",
+            "version": "3.10.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPCSStandards/PHP_CodeSniffer.git",
+                "reference": "86e5f5dd9a840c46810ebe5ff1885581c42a3017"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/86e5f5dd9a840c46810ebe5ff1885581c42a3017",
+                "reference": "86e5f5dd9a840c46810ebe5ff1885581c42a3017",
+                "shasum": ""
+            },
+            "require": {
+                "ext-simplexml": "*",
+                "ext-tokenizer": "*",
+                "ext-xmlwriter": "*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.0 || ^5.0 || ^6.0 || ^7.0 || ^8.0 || ^9.3.4"
+            },
+            "bin": [
+                "bin/phpcbf",
+                "bin/phpcs"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Greg Sherwood",
+                    "role": "Former lead"
+                },
+                {
+                    "name": "Juliette Reinders Folmer",
+                    "role": "Current lead"
+                },
+                {
+                    "name": "Contributors",
+                    "homepage": "https://github.com/PHPCSStandards/PHP_CodeSniffer/graphs/contributors"
+                }
+            ],
+            "description": "PHP_CodeSniffer tokenizes PHP, JavaScript and CSS files and detects violations of a defined set of coding standards.",
+            "homepage": "https://github.com/PHPCSStandards/PHP_CodeSniffer",
+            "keywords": [
+                "phpcs",
+                "standards",
+                "static analysis"
+            ],
+            "support": {
+                "issues": "https://github.com/PHPCSStandards/PHP_CodeSniffer/issues",
+                "security": "https://github.com/PHPCSStandards/PHP_CodeSniffer/security/policy",
+                "source": "https://github.com/PHPCSStandards/PHP_CodeSniffer",
+                "wiki": "https://github.com/PHPCSStandards/PHP_CodeSniffer/wiki"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/PHPCSStandards",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/jrfnl",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/php_codesniffer",
+                    "type": "open_collective"
+                }
+            ],
+            "time": "2024-07-21T23:26:44+00:00"
+        },
+        {
             "name": "sulu/sulu-rector",
             "version": "1.0.0",
             "source": {
@@ -13936,6 +14016,98 @@
                 }
             ],
             "time": "2024-05-31T14:55:39+00:00"
+        },
+        {
+            "name": "symfony/maker-bundle",
+            "version": "v1.60.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/maker-bundle.git",
+                "reference": "c305a02a22974670f359d4274c9431e1a191f559"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/maker-bundle/zipball/c305a02a22974670f359d4274c9431e1a191f559",
+                "reference": "c305a02a22974670f359d4274c9431e1a191f559",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/inflector": "^2.0",
+                "nikic/php-parser": "^4.18|^5.0",
+                "php": ">=8.1",
+                "symfony/config": "^6.4|^7.0",
+                "symfony/console": "^6.4|^7.0",
+                "symfony/dependency-injection": "^6.4|^7.0",
+                "symfony/deprecation-contracts": "^2.2|^3",
+                "symfony/filesystem": "^6.4|^7.0",
+                "symfony/finder": "^6.4|^7.0",
+                "symfony/framework-bundle": "^6.4|^7.0",
+                "symfony/http-kernel": "^6.4|^7.0",
+                "symfony/process": "^6.4|^7.0"
+            },
+            "conflict": {
+                "doctrine/doctrine-bundle": "<2.10",
+                "doctrine/orm": "<2.15"
+            },
+            "require-dev": {
+                "composer/semver": "^3.0",
+                "doctrine/doctrine-bundle": "^2.5.0",
+                "doctrine/orm": "^2.15|^3",
+                "symfony/http-client": "^6.4|^7.0",
+                "symfony/phpunit-bridge": "^6.4.1|^7.0",
+                "symfony/security-core": "^6.4|^7.0",
+                "symfony/yaml": "^6.4|^7.0",
+                "twig/twig": "^3.0|^4.x-dev"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Bundle\\MakerBundle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Maker helps you create empty commands, controllers, form classes, tests and more so you can forget about writing boilerplate code.",
+            "homepage": "https://symfony.com/doc/current/bundles/SymfonyMakerBundle/index.html",
+            "keywords": [
+                "code generator",
+                "dev",
+                "generator",
+                "scaffold",
+                "scaffolding"
+            ],
+            "support": {
+                "issues": "https://github.com/symfony/maker-bundle/issues",
+                "source": "https://github.com/symfony/maker-bundle/tree/v1.60.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2024-06-10T06:03:18+00:00"
         },
         {
             "name": "symfony/phpunit-bridge",
