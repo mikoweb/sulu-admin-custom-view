@@ -9,7 +9,7 @@
 
     <localizations>
         <!-- See: http://docs.sulu.io/en/latest/book/localization.html how to add new localizations -->
-        <localization language="en" default="true"/>
+        <localization language="pl" default="true"/>
     </localizations>
 
     <default-templates>
@@ -33,8 +33,7 @@
         <contexts>
             <context key="main">
                 <meta>
-                    <title lang="en">Main Navigation</title>
-                    <title lang="de">Hauptnavigation</title>
+                    <title lang="pl">Menu główne</title>
                 </meta>
             </context>
         </contexts>
@@ -48,22 +47,22 @@
             <environments>
                 <environment type="prod">
                     <urls>
-                        <url language="en">{host}</url>
+                        <url language="pl">{host}</url>
                     </urls>
                 </environment>
                 <environment type="stage">
                     <urls>
-                        <url language="en">{host}</url>
+                        <url language="pl">{host}</url>
                     </urls>
                 </environment>
                 <environment type="test">
                     <urls>
-                        <url language="en">{host}</url>
+                        <url language="pl">{host}</url>
                     </urls>
                 </environment>
                 <environment type="dev">
                     <urls>
-                        <url language="en">{host}</url>
+                        <url language="pl">{host}</url>
                     </urls>
                 </environment>
             </environments>
