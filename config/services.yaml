@@ -3,8 +3,11 @@
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
+imports:
+    - { resource: '../src/Module/*/Infrastructure/config/services.yaml' }
+
 parameters:
-    default_locale: en
+    default_locale: '%env(resolve:LOCALE)%'
 
 services:
     # default configuration for services in *this* file
@@ -20,6 +23,21 @@ services:
             - '../src/DependencyInjection/'
             - '../src/Entity/'
             - '../src/Kernel.php'
+            - '../src/Module/*/Domain/Entity/'
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    gedmo.listener.tree:
+        class: Gedmo\Tree\TreeListener
+        tags:
+            - { name: doctrine.event_subscriber, connection: default }
+
+    App\Core\Infrastructure\Sulu\DoctrineListBuilderFactory:
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@sulu_core.list_builder_filter_type_registry'
+            - '@event_dispatcher'
+            - '%sulu_security.permissions%'
+            - '@sulu_security.access_control_query_enhancer'
+    Sulu\Component\Rest\ListBuilder\Doctrine\DoctrineListBuilderFactoryInterface: '@App\Core\Infrastructure\Sulu\DoctrineListBuilderFactory'

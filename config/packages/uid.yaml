@@ -1,0 +1,5 @@
+framework:
+    uid:
+        default_uuid_version: 4
+        name_based_uuid_version: 5
+        time_based_uuid_version: 6
