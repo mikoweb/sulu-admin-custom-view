@@ -1,0 +1,6 @@
+sulu_admin:
+    resources:
+        blank:
+            routes:
+                list: admin_api_blank_index
+                detail: admin_api_blank_show

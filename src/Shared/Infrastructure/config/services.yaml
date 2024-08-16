@@ -1,0 +1,4 @@
+imports:
+    - { resource: 'sulu_admin.yaml' }
+
+services: ~

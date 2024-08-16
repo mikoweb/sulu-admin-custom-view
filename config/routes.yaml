@@ -1,3 +1,7 @@
 app_modules:
     resource: ../src/Module/*/Infrastructure/config/routes.yaml
     prefix: /
+
+app_shared:
+    resource: ../src/Shared/Infrastructure/config/routes.yaml
+    prefix: /

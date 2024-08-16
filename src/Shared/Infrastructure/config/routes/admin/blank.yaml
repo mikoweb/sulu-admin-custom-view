@@ -1,0 +1,9 @@
+admin_api_blank_index:
+    path: /blank
+    controller: App\Shared\UI\Admin\Controller\BlankController::index
+    methods: [GET]
+
+admin_api_blank_show:
+    path: /blank/{id}
+    controller: App\Shared\UI\Admin\Controller\BlankController::show
+    methods: [GET]

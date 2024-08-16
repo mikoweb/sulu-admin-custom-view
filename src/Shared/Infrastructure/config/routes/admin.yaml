@@ -1,0 +1,5 @@
+admin_api_blank:
+    resource: admin/blank.yaml
+    prefix: /
+    options:
+        expose: true
