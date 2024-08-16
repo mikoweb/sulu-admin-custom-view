@@ -1,0 +1,6 @@
+admin:
+    custom:
+        menu_name: Custom
+    custom_table:
+        menu_name: Custom Table
+        list_title: Custom Table
