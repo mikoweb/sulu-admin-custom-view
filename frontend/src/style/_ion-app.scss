@@ -1,0 +1,9 @@
+@import "app-variables";
+
+ion-app, .ion-page {
+  display: block;
+  position: static;
+  overflow: visible;
+  contain: none;
+  z-index: $app-ion-app-z-index;
+}
