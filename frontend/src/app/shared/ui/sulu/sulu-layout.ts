@@ -67,7 +67,7 @@ export default class SuluLayout {
     });
   }
 
-  public static async updateCustomView(querySelector: string, html: string, interval: number = 20): Promise<void> {
+  public static async updateCustomView(querySelector: string, html: string, interval: number = 10): Promise<void> {
     new Promise<void>((resolve) => {
       const intervalId = setInterval(() => {
         const view = this.getView()?.querySelector(querySelector);

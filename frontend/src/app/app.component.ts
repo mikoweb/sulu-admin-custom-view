@@ -7,6 +7,7 @@ import CommandBus from '@app/core/application/command-bus/command-bus';
 import { LayoutReady } from '@app/module/layout/ui/layout-ready';
 import { LayoutInitializer } from '@app/module/layout/ui/layout-initializer';
 import { RouterOutlet } from '@angular/router';
+import routesLoader from '@app/shared/infrastructure/routes/app.routes';
 
 @Component({
   selector: 'app-root',
@@ -25,6 +26,8 @@ export class AppComponent {
 
     CustomElementRegistry.init(appRef);
     // await import('../import-global-elements');
+
+    routesLoader();
 
     // place where you can run global command
 
