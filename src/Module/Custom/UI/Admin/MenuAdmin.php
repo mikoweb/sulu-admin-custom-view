@@ -4,6 +4,7 @@ namespace App\Module\Custom\UI\Admin;
 
 use App\Module\Custom\Domain\Admin\Resource\CustomResource;
 use App\Module\Custom\Domain\Admin\Resource\CustomTableResource;
+use App\Module\Custom\Domain\Admin\Resource\CustomTabResource;
 use Sulu\Bundle\AdminBundle\Admin\Admin;
 use Sulu\Bundle\AdminBundle\Admin\Navigation\NavigationItem;
 use Sulu\Bundle\AdminBundle\Admin\Navigation\NavigationItemCollection;
@@ -29,6 +30,12 @@ class MenuAdmin extends Admin
             $table = new NavigationItem(CustomTableResource::MENU_NAME);
             $table->setView(CustomTableResource::VIEW_LIST_NAME);
             $custom->addChild($table);
+        }
+
+        if ($this->securityChecker->hasPermission(CustomTabResource::SECURITY_CONTEXT, PermissionTypes::VIEW)) {
+            $tab = new NavigationItem(CustomTabResource::MENU_NAME);
+            $tab->setView(CustomTabResource::VIEW_LIST_NAME);
+            $custom->addChild($tab);
         }
     }
 }

@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<list xmlns="http://schemas.sulu.io/list-builder/list">
+    <key>custom_sample</key>
+    <properties>
+        <property name="id" translation="sulu_admin.id" sortable="false" visibility="never">
+            <field-name>id</field-name>
+            <entity-name>App\Module\Custom\Domain\Entity\Sample</entity-name>
+        </property>
+        <property name="name" visibility="always" searchability="yes" translation="admin.common.property.name">
+            <field-name>name</field-name>
+            <entity-name>App\Module\Custom\Domain\Entity\Sample</entity-name>
+        </property>
+        <property name="updatedAt" width="shrink" visibility="always" type="datetime" translation="admin.common.property.updated_at">
+            <field-name>updatedAt</field-name>
+            <entity-name>App\Module\Custom\Domain\Entity\Sample</entity-name>
+        </property>
+        <property name="createdAt" width="shrink" visibility="always" type="datetime" translation="admin.common.property.created_at">
+            <field-name>createdAt</field-name>
+            <entity-name>App\Module\Custom\Domain\Entity\Sample</entity-name>
+        </property>
+    </properties>
+</list>

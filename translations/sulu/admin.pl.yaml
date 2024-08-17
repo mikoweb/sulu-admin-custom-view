@@ -1,6 +1,16 @@
 admin:
+    common:
+        property:
+            created_at: Utworzono
+            updated_at: Zmodyfikowano
+            name: Nazwa
     custom:
         menu_name: Custom
     custom_table:
         menu_name: Custom Table
         list_title: Custom Table
+    custom_tab:
+        menu_name: Custom Tab
+        list_title: Przykładowe dane - customowa zakładka jest w widoku edycji
+        edit_tab1_title: Custom Tab 1
+        edit_tab2_title: Custom Tab 2

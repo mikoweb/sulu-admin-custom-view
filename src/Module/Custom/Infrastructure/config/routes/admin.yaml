@@ -1,0 +1,5 @@
+admin_api_custom_tab:
+    resource: admin/tab.yaml
+    prefix: /
+    options:
+        expose: true

@@ -1,0 +1,9 @@
+doctrine:
+    orm:
+        mappings:
+            Custom:
+                type: attribute
+                is_bundle: false
+                dir: '%kernel.project_dir%/src/Module/Custom/Domain/Entity'
+                prefix: 'App\Module\Custom\Domain\Entity'
+                alias: Custom

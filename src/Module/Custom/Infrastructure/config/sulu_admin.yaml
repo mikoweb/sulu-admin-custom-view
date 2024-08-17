@@ -1,0 +1,6 @@
+sulu_admin:
+    resources:
+        custom_sample:
+            routes:
+                list: admin_api_custom_tab_index
+                detail: admin_api_custom_tab_show

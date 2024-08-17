@@ -1,0 +1,9 @@
+admin_api_custom_tab_index:
+    path: /tab
+    controller: App\Module\Custom\UI\Admin\Controller\CustomTabController::index
+    methods: [GET]
+
+admin_api_custom_tab_show:
+    path: /tab/{id}
+    controller: App\Module\Custom\UI\Admin\Controller\CustomTabController::show
+    methods: [GET]

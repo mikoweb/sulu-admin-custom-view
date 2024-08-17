@@ -1,0 +1,5 @@
+imports:
+    - { resource: 'doctrine.yaml' }
+    - { resource: 'sulu_admin.yaml' }
+
+services: ~
