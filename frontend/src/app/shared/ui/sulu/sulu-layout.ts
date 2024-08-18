@@ -52,12 +52,6 @@ export default class SuluLayout {
   }
 
   public static async updateTableView(html: string, hideTitle: boolean = true): Promise<void> {
-    let fromLink = false;
-
-    document.addEventListener('DOMContentLoaded', () => {
-      fromLink = true;
-    });
-
     this.onReady().then(() => {
       const view = this.getView() as any;
 
@@ -70,51 +64,47 @@ export default class SuluLayout {
       this.onReady().then(() => {
         setTimeout(() => {
           this.updateCustomView('table > tbody', '').then(() => {
-            setTimeout(() => {
-              this.updateCustomView('table > tbody', '').then(() => {
-                const view = this.getView() as any;
-                const list = view?.querySelector('*[class*=list--]') as any;
-                const listStyle = list?.style;
-                const toolbarStyle = (view?.querySelector('*[class*=toolbar--]') as any)?.style;
-                const titleStyle = (view?.querySelector('h1') as any)?.style;
+            const view = this.getView() as any;
+            const list = view?.querySelector('*[class*=list--]') as any;
+            const listStyle = list?.style;
+            const toolbarStyle = (view?.querySelector('*[class*=toolbar--]') as any)?.style;
+            const titleStyle = (view?.querySelector('h1') as any)?.style;
 
-                if (view) {
-                  view.style.opacity = '0';
-                }
+            if (view) {
+              view.style.opacity = '0';
+            }
 
-                if (hideTitle && titleStyle) {
-                  titleStyle.display = 'none';
-                }
+            if (hideTitle && titleStyle) {
+              titleStyle.display = 'none';
+            }
 
-                if (toolbarStyle) {
-                  toolbarStyle.display = 'none';
-                }
+            if (toolbarStyle) {
+              toolbarStyle.display = 'none';
+            }
 
-                if (listStyle) {
-                  listStyle.display = 'none';
-                }
+            if (listStyle) {
+              listStyle.display = 'none';
+            }
 
-                if (list) {
-                  const div = document.createElement('div');
-                  div.innerHTML = html;
-                  list.parentNode.appendChild(div);
-                }
+            if (list) {
+              const div = document.createElement('div');
+              div.innerHTML = html;
+              list.parentNode.appendChild(div);
+            }
 
-                if (view) {
-                  view.style.opacity = '1';
-                }
+            if (view) {
+              view.style.opacity = '1';
+            }
 
-                resolve();
-              });
-            }, fromLink ? 1000 : 20);
+            resolve();
           });
-        }, 80);
+        }, 100);
       });
     });
   }
 
   public static async updateCustomView(querySelector: string, html: string, interval: number = 10): Promise<void> {
-    new Promise<void>((resolve) => {
+    return new Promise<void>((resolve) => {
       this.onReady().then(() => {
         const intervalId = setInterval(() => {
           const view = this.getView()?.querySelector(querySelector);
@@ -129,8 +119,8 @@ export default class SuluLayout {
     });
   }
 
-  private static async onReady() {
-    new Promise<void>((resolve) => {
+  public static async onReady() {
+    return new Promise<void>((resolve) => {
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', () => {
           LayoutReady.onReady(() => {

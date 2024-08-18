@@ -1,0 +1,21 @@
+.app-toolbar-controls {
+  flex-grow: 1;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+
+  &__items {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    background-color: #fafafa;
+    border-left: 1px solid #ededed;
+    border-right: 1px solid #ededed;
+
+    > li {
+      display: block;
+    }
+  }
+}
