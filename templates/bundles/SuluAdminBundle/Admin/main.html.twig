@@ -1,0 +1,19 @@
+{% extends "@!SuluAdmin/Admin/main.html.twig" %}
+
+{% block style %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('admin/styles.0e475985cdae73a6.css') }}">
+{%- endblock ~%}
+
+{% block application -%}
+    {{ parent() }}
+    <app-root></app-root>
+    <ion-app wc-ready></ion-app>
+{% endblock %}
+
+{% block javascript %}
+    <script src="{{ asset('admin/runtime.3f85c47f325488e0.js') }}"></script>
+    <script src="{{ asset('admin/polyfills.3e07c2ce2a7221f7.js') }}"></script>
+    <script src="{{ asset('admin/main.2e61639bfcf19fe2.js') }}"></script>
+    {{ parent() }}
+{%- endblock %}
