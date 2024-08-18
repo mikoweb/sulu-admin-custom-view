@@ -16,6 +16,6 @@ export default class Router {
   }
 
   public go(path: string): void {
-    window.location.href = `#${path}`;
+    this.router.go(path);
   }
 }

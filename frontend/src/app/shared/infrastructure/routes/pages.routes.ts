@@ -11,6 +11,6 @@ export default function pagesRoutes(router: Router) {
   });
 
   router.define('/custom/table', (path: string) => {
-    SuluLayout.updateTableKeepTitleView(`<p>Custom Table</p><p>${path}</p>`);
+    SuluLayout.updateTableView(`<h1>Custom Table</h1><p>Custom Table</p><p>${path}</p>`);
   });
 }

@@ -1,7 +1,7 @@
-import { LayoutReady } from './layout-ready';
 import { AppProgressBehavior } from './behavior/app-progress-behavior';
 import { IonProgressBar } from '@ionic/angular/directives/proxies';
 import { DemoLinkBehavior } from '@app/module/layout/ui/behavior/demo-link-behavior';
+import { LayoutReady } from '@app/shared/ui/layout-ready';
 
 export class LayoutInitializer {
   public static init(): void {

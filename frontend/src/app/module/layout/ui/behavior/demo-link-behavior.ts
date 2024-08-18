@@ -14,9 +14,11 @@ export class DemoLinkBehavior extends Behavior {
 
     switch (type) {
       case 'tab':
+        SuluLayout.loadEmptyView();
         SuluLayout.loadEmptyTabView();
         break;
       case 'table':
+        SuluLayout.loadEmptyView();
         SuluLayout.loadEmptyTableView();
         break;
       default:

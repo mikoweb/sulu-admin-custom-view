@@ -473,7 +473,7 @@ ${t2}`;
     return cleanPath(href);
   }
   function cleanPath(path) {
-    return Stringer_exports.strip(path, " /#");
+    return Stringer_exports.strip(path, " #");
   }
 
   // src/utils/Route.js
@@ -535,10 +535,28 @@ ${t2}`;
   var HashRouter = class {
     constructor() {
       this.routes = [];
+
+      const _pushState = window.history.pushState;
+      const _replaceState = window.history.replaceState;
+
+      window.history.pushState = function (state, title, url) {
+        _pushState.call(this, state, title, url);
+        window.dispatchEvent(new CustomEvent("state-changed", { state }));
+      };
+
+      window.history.replaceState = function (state, title, url) {
+        _replaceState.call(this, state, title, url);
+        window.dispatchEvent(new CustomEvent("state-changed", { state }));
+      };
+
       const hashHandler = (ev) => hashChangeHandler(ev, this.routes);
       const loadHandler = (ev) => hashChangeHandler(ev, this.routes, true);
       window.addEventListener("hashchange", hashHandler, false);
-      window.addEventListener("load", loadHandler, false);
+      // window.addEventListener("load", loadHandler, false);
+
+      window.addEventListener("state-changed", () => {
+        loadHandler({target: window});
+      });
     }
     add(path, handler) {
       this.routes.push({ route: new Route(path), handler });

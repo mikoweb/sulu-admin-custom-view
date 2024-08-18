@@ -1,5 +1,5 @@
 import { IonProgressBar } from '@ionic/angular/directives/proxies';
-import { LayoutReady } from '../layout-ready';
+import { LayoutReady } from '@app/shared/ui/layout-ready';
 
 export class AppProgressBehavior {
   private loaded: boolean = false;
