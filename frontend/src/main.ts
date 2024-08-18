@@ -6,6 +6,7 @@ import { configure } from 'mobx';
 
 configure({
   enforceActions: 'never',
+  isolateGlobalState: true,
 });
 
 import { AppComponent } from '@app/app.component';
