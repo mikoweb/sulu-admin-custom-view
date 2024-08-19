@@ -30,6 +30,8 @@
     "@capacitor/keyboard": "6.0.0",
     "@capacitor/status-bar": "6.0.0",
     "@ionic/angular": "^8.1.1",
+    "@ngx-translate/core": "^15.0.0",
+    "@ngx-translate/http-loader": "^8.0.0",
     "@tshio/command-bus": "^1.0.4",
     "@types/uuid": "^9.0.8",
     "bootstrap": "^5.3.3",
