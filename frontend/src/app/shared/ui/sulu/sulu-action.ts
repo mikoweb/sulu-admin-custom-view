@@ -16,7 +16,7 @@ export default class SuluAction {
               controls.innerHTML = toolbarControls;
               container = controls.querySelector('ul.app-toolbar-controls__items');
             } else {
-              container = controls.querySelector('ul[class*=items--]');
+              container = controls.querySelector('ul[class*=items--], ul.app-toolbar-controls__items');
             }
 
             if (container) {

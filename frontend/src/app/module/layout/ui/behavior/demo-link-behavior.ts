@@ -12,17 +12,16 @@ export class DemoLinkBehavior extends Behavior {
   private onClick(event: Event): void {
     const type = (this.element as HTMLElement).dataset['type'];
 
+    SuluLayout.loadEmptyControls();
+    SuluLayout.loadEmptyView();
+
     switch (type) {
       case 'tab':
-        SuluLayout.loadEmptyView();
         SuluLayout.loadEmptyTabView();
         break;
       case 'table':
-        SuluLayout.loadEmptyView();
         SuluLayout.loadEmptyTableView();
         break;
-      default:
-        SuluLayout.loadEmptyView();
     }
   }
 }

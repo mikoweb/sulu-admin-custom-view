@@ -21,6 +21,14 @@ export default class SuluLayout {
     return document.querySelector('*[class*=tabs--]');
   }
 
+  public static loadEmptyControls(): void {
+    const controls = this.getControls();
+
+    if (controls !== null) {
+      controls.innerHTML = '';
+    }
+  }
+
   public static updateView(html: string): void {
     const view = this.getView();
 
