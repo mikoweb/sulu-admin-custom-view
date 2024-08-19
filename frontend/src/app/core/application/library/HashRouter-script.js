@@ -4,6 +4,8 @@
 // Apache License Version 2.0
 
 
+import SuluAction from '@app/shared/ui/sulu/sulu-action';
+
 var HashRouter = (() => {
   var __defProp = Object.defineProperty;
   var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -541,16 +543,26 @@ ${t2}`;
 
       window.history.pushState = function (state, title, url) {
         _pushState.call(this, state, title, url);
+        SuluAction.clearActions();
         window.dispatchEvent(new CustomEvent("state-changed", { state }));
       };
 
       window.history.replaceState = function (state, title, url) {
         _replaceState.call(this, state, title, url);
+        SuluAction.clearActions();
         window.dispatchEvent(new CustomEvent("state-changed", { state }));
       };
 
-      const hashHandler = (ev) => hashChangeHandler(ev, this.routes);
-      const loadHandler = (ev) => hashChangeHandler(ev, this.routes, true);
+      const hashHandler = (ev) => {
+        SuluAction.clearActions();
+        hashChangeHandler(ev, this.routes)
+      };
+
+      const loadHandler = (ev) => {
+        SuluAction.clearActions();
+        hashChangeHandler(ev, this.routes, true)
+      };
+
       window.addEventListener("hashchange", hashHandler, false);
       // window.addEventListener("load", loadHandler, false);
 
