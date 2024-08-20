@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component, ElementRef } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
+import { ChangeDetectionStrategy, Component, ElementRef, ViewChild } from '@angular/core';
+import { IonicModule, IonModal } from '@ionic/angular';
 import { CustomElement, customElementParams } from '@app/core/application/custom-element/custom-element';
 import CustomElementBaseComponent from '@app/core/application/custom-element/custom-element-base-component';
 import GlobalStyleLoader from '@app/core/application/custom-element/global-style-loader';
@@ -24,6 +24,8 @@ export class ToolbarButtonHelpComponent extends CustomElementBaseComponent {
   public static override readonly ngSelectorName: string
     = `${CustomElementBaseComponent.ngPrefix}-${ToolbarButtonHelpComponent.customElementName}`;
 
+  @ViewChild(IonModal) modal: IonModal | null = null;
+
   constructor(
     ele: ElementRef,
     gsl: GlobalStyleLoader,
@@ -33,5 +35,10 @@ export class ToolbarButtonHelpComponent extends CustomElementBaseComponent {
 
   protected onClick(): void {
     console.log('!!! HELP');
+    this.modal?.present();
+  }
+
+  cancelModal() {
+    this.modal?.dismiss(null, 'cancel');
   }
 }

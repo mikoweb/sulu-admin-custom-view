@@ -4,3 +4,27 @@
   </span>
   <span>{{ 'sulu.toolbar.button_help.label' | translate }}</span>
 </app-toolbar-button>
+<ion-modal>
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="end">
+          <ion-button (click)="cancelModal()">
+            <ion-icon name="close-circle-outline" size="large" aria-label="Close"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        <ion-title>{{ 'sulu.help_modal.title' | translate }}</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <div class="app-help-modal">
+        <h2 class="app-help-modal__title">{{ 'sulu.help_modal.content_title' | translate }}</h2>
+        <a href="https://github.com/mikoweb/sulu-admin-custom-view" class="app-help-modal__github">
+          <ion-icon name="logo-github" aria-label="GitHub icon"></ion-icon>
+          <span>GitHub</span>
+        </a>
+        <p>Copyright © Rafał Mikołajun 2024</p>
+      </div>
+    </ion-content>
+  </ng-template>
+</ion-modal>

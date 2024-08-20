@@ -4,6 +4,10 @@
       "button_help": {
         "label": "Pomoc"
       }
+    },
+    "help_modal": {
+      "title": "Pomoc",
+      "content_title": "Niestandardowe widoki Panelu Sulu"
     }
   }
 }
