@@ -34,7 +34,6 @@ export class ToolbarButtonHelpComponent extends CustomElementBaseComponent {
   }
 
   protected onClick(): void {
-    console.log('!!! HELP');
     this.modal?.present();
   }
 

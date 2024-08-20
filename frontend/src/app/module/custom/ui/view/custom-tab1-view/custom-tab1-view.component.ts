@@ -57,7 +57,7 @@ export class CustomTab1ViewComponent extends CustomElementBaseComponent implemen
   }
 
   protected initFormValues(): void {
-    this.form.get('password')?.setValue('password');
+    this.form.get('number')?.setValue(10);
   }
 
   protected async onSubmit(): Promise<void> {
