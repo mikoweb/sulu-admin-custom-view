@@ -15,7 +15,7 @@ export default class CustomTabController {
 
   public async showTab1(id: string): Promise<void> {
     SuluAction.addAction(toolbarButtonHelp(await this.getHelpLabel()));
-    SuluLayout.updateTabView(`<p>Custom Tab 1</p><p>${id}</p>`);
+    SuluLayout.updateTabView(`<app-custom-tab1-view></app-custom-tab1-view>`);
   }
 
   public async showTab2(id: string): Promise<void> {

@@ -9,5 +9,25 @@
       "title": "Pomoc",
       "content_title": "Niestandardowe widoki Panelu Sulu"
     }
+  },
+  "custom": {
+    "tab1": {
+      "save_message": "Dane zostały zapisane",
+      "form": {
+        "text_label": "Pole tekstowe",
+        "text_placeholder": "Wpisz tekst",
+        "text_error": "Pole nie może być puste",
+        "number_label": "Pole liczbowe",
+        "number_error": "Podaj liczbę naturalną",
+        "password_label": "Hasło",
+        "password_error": "Pole nie może być puste",
+        "email_label": "E-mail",
+        "email_placeholder": "email@domain.com",
+        "email_error": "Musisz podać prawidłowy e-mail",
+        "tel_label": "Telefon",
+        "tel_placeholder": "888-888-8888",
+        "save_label": "Zapisz"
+      }
+    }
   }
 }

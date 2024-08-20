@@ -1,0 +1,64 @@
+<div class="app-custom-tab1">
+  <h1 class="h4">Custom Tab 1</h1>
+  <form class="form" [formGroup]="form">
+    <div class="form-group">
+      <ion-input
+        formControlName="text"
+        required
+        mode="md"
+        label="{{ 'custom.tab1.form.text_label' | translate }}"
+        placeholder="{{ 'custom.tab1.form.text_placeholder' | translate }}"
+        errorText="{{ 'custom.tab1.form.text_error' | translate }}"></ion-input>
+    </div>
+    <div class="form-group">
+      <ion-input
+        formControlName="number"
+        mode="md"
+        label="{{ 'custom.tab1.form.number_label' | translate }}"
+        type="number"
+        required
+        step="1"
+        min="0"
+        placeholder="000"
+        errorText="{{ 'custom.tab1.form.number_error' | translate }}"></ion-input>
+    </div>
+    <div class="form-group">
+      <ion-input
+        formControlName="password"
+        required
+        mode="md"
+        label="{{ 'custom.tab1.form.password_label' | translate }}"
+        type="password"
+        value="password"
+        errorText="{{ 'custom.tab1.form.password_error' | translate }}"></ion-input>
+    </div>
+    <div class="form-group">
+      <ion-input
+        formControlName="email"
+        required
+        mode="md"
+        label="{{ 'custom.tab1.form.email_label' | translate }}"
+        email
+        type="email"
+        placeholder="{{ 'custom.tab1.form.email_placeholder' | translate }}"
+        errorText="{{ 'custom.tab1.form.email_error' | translate }}"></ion-input>
+    </div>
+    <div class="form-group">
+      <ion-input
+        formControlName="tel"
+        mode="md"
+        label="{{ 'custom.tab1.form.tel_label' | translate }}"
+        type="tel"
+        placeholder="{{ 'custom.tab1.form.tel_placeholder' | translate }}"></ion-input>
+    </div>
+    <div class="form-group">
+      <ion-button
+        fill="outline"
+        mode="md"
+        (click)="onSubmit()"
+        [disabled]="!this.form.valid">
+        {{ 'custom.tab1.form.save_label' | translate }}
+      </ion-button>
+    </div>
+  </form>
+</div>
