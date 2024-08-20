@@ -10,6 +10,7 @@ import { LayoutReady } from '@app/shared/ui/layout-ready';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from '../environments/environment';
 import AppRouter from '@app/shared/infrastructure/routes/app-router';
+import SuluLayout from '@app/shared/ui/sulu/sulu-layout';
 
 @Component({
   selector: 'app-root',
@@ -30,6 +31,10 @@ export class AppComponent {
     this.translate.setDefaultLang(environment.defaultLanguage);
     commandBusLoader();
     const commandBus = inject(CommandBus);
+
+    setTimeout(() => {
+      SuluLayout.changeSearchNavigationLink('Dashboard', 'su-desktop');
+    }, 1000);
 
     this.appRouter.init();
 

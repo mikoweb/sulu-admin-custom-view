@@ -1,0 +1,15 @@
+:host {
+  display: block;
+}
+
+.app-custom-dashboard {
+  &.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  ion-item {
+    --padding-start: 0;
+    --padding-end: 0;
+  }
+}

@@ -46,6 +46,8 @@ export default class SuluLayout {
   }
 
   public static async updateTabView(html: string): Promise<void> {
+    await this.clearDashboardView();
+
     return new Promise((resolve) => {
       this.onReady().then(() => {
         setTimeout(() => {
@@ -60,6 +62,8 @@ export default class SuluLayout {
   }
 
   public static async updateTableView(html: string, hideTitle: boolean = true): Promise<void> {
+    await this.clearDashboardView();
+
     this.onReady().then(() => {
       const view = this.getView() as any;
 
@@ -112,6 +116,8 @@ export default class SuluLayout {
   }
 
   public static async updateCustomView(querySelector: string, html: string, interval: number = 10): Promise<void> {
+    await this.clearDashboardView();
+
     return new Promise<void>((resolve) => {
       this.onReady().then(() => {
         const intervalId = setInterval(() => {
@@ -119,6 +125,93 @@ export default class SuluLayout {
 
           if (view && view.innerHTML.trim().length === 0) {
             view.innerHTML = html;
+            clearInterval(intervalId);
+            resolve();
+          }
+        }, interval);
+      });
+    });
+  }
+
+  public static async updateDashboardView(html: string, interval: number = 10): Promise<void> {
+    await this.clearDashboardView();
+
+    return new Promise<void>((resolve) => {
+      this.onReady().then(() => {
+        const intervalId = setInterval(() => {
+          const view = this.getView();
+
+          if (view) {
+            const div = document.createElement('div');
+            div.classList.add('custom-dashboard-view')
+            div.innerHTML = html;
+            view.appendChild(div);
+
+            let secondInterval: any;
+            const hideSearch = () => {
+              const searchStyle = (view.querySelector('*[class*=search--]') as any)?.style;
+
+              if (searchStyle && searchStyle.display !== 'none') {
+                searchStyle.display = 'none';
+                clearInterval(secondInterval);
+              }
+            };
+
+            secondInterval = setInterval(() => hideSearch(), 100);
+            hideSearch();
+
+            clearInterval(intervalId);
+            resolve();
+          }
+        }, interval);
+      });
+    });
+  }
+
+  public static async clearDashboardView(interval: number = 10): Promise<void> {
+    return new Promise<void>((resolve) => {
+      this.onReady().then(() => {
+        const intervalId = setInterval(() => {
+          const view = this.getView();
+
+          if (view) {
+            clearInterval(intervalId);
+
+            for (const item of view.querySelectorAll('.custom-dashboard-view')) {
+              item.remove();
+            }
+
+            resolve();
+          }
+        }, interval);
+      });
+    });
+  }
+
+  public static async changeSearchNavigationLink(label: string, iconName: string, interval: number = 10): Promise<void> {
+    return new Promise<void>((resolve) => {
+      this.onReady().then(() => {
+        const intervalId = setInterval(() => {
+          const navigation = this.getNavigation();
+
+          if (navigation) {
+            const searchButton = navigation.querySelector('.su-search')?.closest('button');
+
+            if (searchButton) {
+              const text = searchButton.querySelector('*[class*=text--]');
+              const icon = searchButton.querySelector('.su-search');
+
+              if (text) {
+                text.textContent = label;
+              }
+
+              if (icon) {
+                icon.classList.remove('su-search');
+                icon.classList.add(iconName);
+                icon.setAttribute('aria-label', iconName);
+              }
+            }
+
             clearInterval(intervalId);
             resolve();
           }

@@ -40,6 +40,7 @@
     "material-colors": "^1.2.6",
     "mobx": "^6.12.3",
     "mobx-angular": "^4.7.2",
+    "ng-apexcharts": "^1.10.0",
     "rxjs": "~7.8.1",
     "tslib": "^2.6.2",
     "uuid": "^9.0.1",

@@ -5,6 +5,8 @@
 
 
 import SuluAction from '@app/shared/ui/sulu/sulu-action';
+import SuluLayout from '@app/shared/ui/sulu/sulu-layout';
+import { environment } from '../../../../environments/environment';
 
 var HashRouter = (() => {
   var __defProp = Object.defineProperty;
@@ -538,36 +540,50 @@ ${t2}`;
     constructor() {
       this.routes = [];
 
+      this._currentUrl = null;
       const _pushState = window.history.pushState;
       const _replaceState = window.history.replaceState;
 
+      const routerChangedHandler = (state, title, url) => {
+        if (this._currentUrl !== url) {
+          this._currentUrl = url;
+          window.dispatchEvent(new CustomEvent('route-changed', {state, title, url}));
+        }
+      }
+
       window.history.pushState = function (state, title, url) {
         _pushState.call(this, state, title, url);
-        SuluAction.clearActions();
-        window.dispatchEvent(new CustomEvent("state-changed", { state }));
+        routerChangedHandler(state, title, url);
       };
 
       window.history.replaceState = function (state, title, url) {
         _replaceState.call(this, state, title, url);
-        SuluAction.clearActions();
-        window.dispatchEvent(new CustomEvent("state-changed", { state }));
+        routerChangedHandler(state, title, url);
       };
 
       const hashHandler = (ev) => {
-        SuluAction.clearActions();
-        hashChangeHandler(ev, this.routes)
+        SuluAction.clearActions().then(() => {
+          SuluLayout.clearDashboardView().then(() => {
+            hashChangeHandler(ev, this.routes);
+          });
+        });
       };
 
       const loadHandler = (ev) => {
-        SuluAction.clearActions();
-        hashChangeHandler(ev, this.routes, true)
+        SuluAction.clearActions().then(() => {
+          SuluLayout.clearDashboardView().then(() => {
+            hashChangeHandler(ev, this.routes, true);
+          });
+        });
       };
 
-      window.addEventListener("hashchange", hashHandler, false);
-      // window.addEventListener("load", loadHandler, false);
+      if (!environment.production) {
+        window.addEventListener('hashchange', hashHandler, false);
+        window.addEventListener('load', loadHandler, false);
+      }
 
-      window.addEventListener("state-changed", () => {
-        loadHandler({target: window});
+      window.addEventListener('route-changed', () => {
+        hashHandler({oldURL: '', newURL: window.location.href});
       });
     }
     add(path, handler) {

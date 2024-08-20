@@ -19,3 +19,8 @@ CustomTab1ViewComponent.register();
 
 import { CustomTab2ViewComponent } from '@app/module/custom/ui/view/custom-tab2-view/custom-tab2-view.component';
 CustomTab2ViewComponent.register();
+
+import {
+  CustomDashboardViewComponent
+} from '@app/module/custom/ui/view/custom-dashboard-view/custom-dashboard-view.component';
+CustomDashboardViewComponent.register();
