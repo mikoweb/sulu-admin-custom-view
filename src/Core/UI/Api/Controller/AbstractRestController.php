@@ -1,15 +1,13 @@
 <?php
 
-namespace App\Core\UI\Admin\Controller;
+namespace App\Core\UI\Api\Controller;
 
 use App\Core\UI\Api\Controller\Trait\CreateErrorViewTrait;
 use App\Core\UI\Api\Controller\Trait\CreateSuccessViewTrait;
-use FOS\RestBundle\Controller\AbstractFOSRestController;
-use Sulu\Component\Rest\RestControllerTrait;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-abstract class AbstractAdminRestController extends AbstractFOSRestController
+abstract class AbstractRestController extends AbstractController
 {
-    use RestControllerTrait;
     use CreateSuccessViewTrait;
     use CreateErrorViewTrait;
 
