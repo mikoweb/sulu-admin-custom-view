@@ -1,0 +1,4 @@
+knp_paginator:
+    default_options:
+        sort_field_name: '=sort'
+        sort_direction_name: '=direction'

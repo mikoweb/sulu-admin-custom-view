@@ -1,0 +1,14 @@
+when@dev:
+    nelmio_api_doc:
+        documentation:
+            info:
+                title: Sulu Admin Custom View
+                description: API
+                version: 0.0.1
+        areas:
+            default:
+                path_patterns:
+                    - ^/api(?!/doc$) # Accepts routes under /api except /api/doc
+            admin:
+                path_patterns:
+                    - ^/admin/api(?!/blank/*.*$)
