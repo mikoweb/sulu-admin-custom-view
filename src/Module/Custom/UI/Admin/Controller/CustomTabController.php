@@ -5,6 +5,7 @@ namespace App\Module\Custom\UI\Admin\Controller;
 use App\Core\UI\Admin\Controller\AbstractAdminRestController;
 use App\Module\Custom\Domain\Admin\Resource\CustomTabResource;
 use App\Module\Custom\Domain\Entity\Sample;
+use OpenApi\Attributes as OA;
 use Sulu\Component\Rest\ListBuilder\Doctrine\DoctrineListBuilderFactoryInterface;
 use Sulu\Component\Rest\ListBuilder\ListBuilderInterface;
 use Sulu\Component\Rest\ListBuilder\Metadata\FieldDescriptorFactoryInterface;
@@ -27,6 +28,7 @@ class CustomTabController extends AbstractAdminRestController implements Secured
         return CustomTabResource::SECURITY_CONTEXT;
     }
 
+    #[OA\Tag(name: 'Custom Tab')]
     public function index(): Response
     {
         $fieldDescriptors = $this->fieldDescriptorFactory->getFieldDescriptors(CustomTabResource::RESOURCE_KEY);
@@ -50,6 +52,7 @@ class CustomTabController extends AbstractAdminRestController implements Secured
         return $this->handleView($this->view($listRepresentation));
     }
 
+    #[OA\Tag(name: 'Custom Tab')]
     public function show(Sample $sample): Response
     {
         return $this->json($sample, context: ['groups' => ['admin_read']]);

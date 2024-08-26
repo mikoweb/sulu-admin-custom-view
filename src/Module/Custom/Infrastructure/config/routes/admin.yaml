@@ -3,3 +3,7 @@ admin_api_custom_tab:
     prefix: /
     options:
         expose: true
+
+admin_api_custom_table:
+    resource: admin/table.yaml
+    prefix: /

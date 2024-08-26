@@ -1,0 +1,4 @@
+admin_api_custom_table_index:
+    path: /table
+    controller: App\Module\Custom\UI\Admin\Controller\CustomTableController::index
+    methods: [GET]
