@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   defaultLanguage: 'pl',
+  adminApiBaseUrl: import.meta.env['NG_APP_ADMIN_API_BASE_URL'] ?? 'http://sulu-admin-custom-view.dev',
 };
 
 /*
