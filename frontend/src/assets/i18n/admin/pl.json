@@ -1,4 +1,7 @@
 {
+  "admin_client": {
+    "common_validation_error": "Błąd walidacji!"
+  },
   "sulu": {
     "toolbar": {
       "button_help": {
