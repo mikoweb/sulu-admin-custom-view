@@ -15,7 +15,7 @@ export default class CustomTableController {
 
   public async showTable(): Promise<void> {
     SuluAction.addAction(toolbarButtonHelp(await this.getHelpLabel()));
-    SuluLayout.updateTableView(`<h1>Custom Table</h1><p>Custom Table</p>`);
+    SuluLayout.updateTableView(`<app-custom-table-view></app-custom-table-view>`);
   }
 
   private async getHelpLabel(): Promise<string> {

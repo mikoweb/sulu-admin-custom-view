@@ -23,4 +23,8 @@ CustomTab2ViewComponent.register();
 import {
   CustomDashboardViewComponent
 } from '@app/module/custom/ui/view/custom-dashboard-view/custom-dashboard-view.component';
+
 CustomDashboardViewComponent.register();
+
+import { CustomTableViewComponent } from '@app/module/custom/ui/view/custom-table-view/custom-table-view.component';
+CustomTableViewComponent.register();

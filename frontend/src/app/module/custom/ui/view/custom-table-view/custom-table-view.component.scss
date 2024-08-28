@@ -1,0 +1,25 @@
+:host {
+  display: block;
+}
+
+.app-custom-table {
+  mat-table {
+    margin: 25px 0 0;
+  }
+}
+
+.mat-column-name {
+  flex-grow: 6;
+}
+
+.mat-column-createdAt {
+  justify-content: center;
+  white-space: nowrap;
+  flex-grow: 1;
+}
+
+.mat-column-updatedAt {
+  justify-content: center;
+  white-space: nowrap;
+  flex-grow: 1;
+}
