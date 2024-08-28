@@ -2,11 +2,12 @@ import { Injectable } from '@angular/core';
 import axios, { CreateAxiosDefaults } from 'axios';
 import TranslatorService from '@app/core/application/translator/TranslatorService';
 import { environment } from '../../../../environments/environment';
+import { Client } from '@app/core/infrastructure/client/client';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AdminClient {
+export class AdminClient implements Client {
   private client: any;
 
   constructor(
@@ -15,7 +16,7 @@ export class AdminClient {
     this.init();
   }
 
-  public get method() {
+  public get method(): any {
     return this.client;
   }
 
