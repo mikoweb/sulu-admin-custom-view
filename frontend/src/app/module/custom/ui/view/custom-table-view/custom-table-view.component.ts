@@ -17,6 +17,8 @@ import { MobxAngularModule, observable } from 'mobx-angular';
 import { makeObservable } from 'mobx';
 import { LuxonModule } from 'luxon-angular';
 import { TranslateModule } from '@ngx-translate/core';
+import { MatMenu, MatMenuTrigger } from '@angular/material/menu';
+import { LinkComponent } from '@app/shared/ui/elements/link/link.component';
 
 const { encapsulation, schemas } = customElementParams;
 
@@ -36,6 +38,9 @@ const { encapsulation, schemas } = customElementParams;
     MobxAngularModule,
     LuxonModule,
     TranslateModule,
+    MatMenu,
+    MatMenuTrigger,
+    LinkComponent,
   ]
 })
 @CustomElement()
@@ -49,7 +54,7 @@ export class CustomTableViewComponent extends CustomElementBaseComponent impleme
 
   @Input() limit: number = PaginationConst.defaultLimit;
 
-  protected displayedColumns: string[] = ['name', 'createdAt', 'updatedAt'];
+  protected displayedColumns: string[] = ['action', 'name', 'createdAt', 'updatedAt'];
   protected dataSource: MatTableDataSource<CustomTableListItemDto> = new MatTableDataSource<CustomTableListItemDto>([]);
   @observable protected pagination?: Pagination<CustomTableListItemDto>;
   protected paginationDisabled: boolean = false;

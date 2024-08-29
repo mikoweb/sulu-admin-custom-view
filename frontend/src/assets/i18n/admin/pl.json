@@ -42,9 +42,14 @@
     },
     "table": {
       "header": {
+        "action": "Akcja",
         "name": "Nazwa",
         "created_at": "Utworzono",
         "updated_at": "Zmodyfikowano"
+      },
+      "action": {
+        "open": "Otwórz",
+        "position_details": "Szczegóły pozycji"
       }
     }
   }

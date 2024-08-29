@@ -2,13 +2,35 @@
   <div class="app-custom-table">
     <h1 class="h4">Custom Table</h1>
     <mat-table [dataSource]="dataSource" matSort (matSortChange)="onSortChange($event)">
+      <ng-container matColumnDef="action">
+        <mat-header-cell *matHeaderCellDef>
+          {{ 'custom.table.header.action' | translate }}
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <ion-chip [matMenuTriggerFor]="rowAction" color="primary"
+                    aria-label="{{ 'custom.table.action.open' | translate }}">
+            <ion-icon name="arrow-forward-circle-outline"
+                      aria-label="{{ 'custom.table.action.open' | translate }}"></ion-icon>
+          </ion-chip>
+          <mat-menu #rowAction>
+            <ion-list class="app-table-action-list">
+              <app-link href="/custom/table/{{ row.id }}/details">
+                <ion-item class="app-table-action-list__link">
+                  <ion-icon color="tertiary" aria-hidden="true" name="open-outline" slot="start"></ion-icon>
+                  <ion-label>{{ 'custom.table.action.position_details' | translate }}</ion-label>
+                </ion-item>
+              </app-link>
+            </ion-list>
+          </mat-menu>
+        </mat-cell>
+      </ng-container>
 
       <ng-container matColumnDef="name">
         <mat-header-cell *matHeaderCellDef mat-sort-header>
-          Name
-        </mat-header-cell>
-        <mat-cell *matCellDef="let element">
           {{ 'custom.table.header.name' | translate }}
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          {{ row.name }}
         </mat-cell>
       </ng-container>
 
@@ -16,8 +38,8 @@
         <mat-header-cell *matHeaderCellDef mat-sort-header>
           {{ 'custom.table.header.created_at' | translate }}
         </mat-header-cell>
-        <mat-cell *matCellDef="let element">
-          {{ element.createdAt | dateTimeToFormat:'yyyy-LL-dd HH:mm:ss' }}
+        <mat-cell *matCellDef="let row">
+          {{ row.createdAt | dateTimeToFormat:'yyyy-LL-dd HH:mm:ss' }}
         </mat-cell>
       </ng-container>
 
@@ -25,8 +47,8 @@
         <mat-header-cell *matHeaderCellDef mat-sort-header>
           {{ 'custom.table.header.updated_at' | translate }}
         </mat-header-cell>
-        <mat-cell *matCellDef="let element">
-          {{ element.updatedAt | dateTimeToFormat:'yyyy-LL-dd HH:mm:ss' }}
+        <mat-cell *matCellDef="let row">
+          {{ row.updatedAt | dateTimeToFormat:'yyyy-LL-dd HH:mm:ss' }}
         </mat-cell>
       </ng-container>
 

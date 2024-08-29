@@ -1,0 +1,21 @@
+.app-table-action-list {
+  min-width: 250px;
+  background: #fff;
+
+  ion-item {
+    --background: #fff;
+  }
+
+  app-link {
+    display: block;
+  }
+
+  &__link {
+    cursor: pointer;
+    text-decoration: underline;
+
+    &:hover {
+      --background: var(--md-grey-200);
+    }
+  }
+}

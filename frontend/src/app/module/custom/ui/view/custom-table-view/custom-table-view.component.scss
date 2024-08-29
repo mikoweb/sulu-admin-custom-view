@@ -8,8 +8,25 @@
   }
 }
 
+.mat-column-action {
+  flex-grow: 0.5;
+  justify-content: center;
+}
+
 .mat-column-name {
-  flex-grow: 6;
+  flex-grow: 8;
+
+  @media (max-width: 1500px) {
+    flex-grow: 4;
+  }
+
+  @media (max-width: 1200px) {
+    flex-grow: 2;
+  }
+
+  @media (max-width: 1000px) {
+    flex-grow: 1;
+  }
 }
 
 .mat-column-createdAt {
