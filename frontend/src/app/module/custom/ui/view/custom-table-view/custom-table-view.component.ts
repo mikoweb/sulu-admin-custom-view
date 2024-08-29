@@ -16,6 +16,7 @@ import CustomTableListItemDto from '@app/module/custom/ui/dto/custom-table-list-
 import { MobxAngularModule, observable } from 'mobx-angular';
 import { makeObservable } from 'mobx';
 import { LuxonModule } from 'luxon-angular';
+import { TranslateModule } from '@ngx-translate/core';
 
 const { encapsulation, schemas } = customElementParams;
 
@@ -34,6 +35,7 @@ const { encapsulation, schemas } = customElementParams;
     MatSortModule,
     MobxAngularModule,
     LuxonModule,
+    TranslateModule,
   ]
 })
 @CustomElement()

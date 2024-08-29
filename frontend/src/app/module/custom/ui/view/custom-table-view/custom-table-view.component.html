@@ -4,17 +4,17 @@
     <mat-table [dataSource]="dataSource" matSort (matSortChange)="onSortChange($event)">
 
       <ng-container matColumnDef="name">
-        <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
           Name
         </mat-header-cell>
         <mat-cell *matCellDef="let element">
-          {{ element.name }}
+          {{ 'custom.table.header.name' | translate }}
         </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="createdAt">
-        <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by createdAt">
-          Created At
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          {{ 'custom.table.header.created_at' | translate }}
         </mat-header-cell>
         <mat-cell *matCellDef="let element">
           {{ element.createdAt | dateTimeToFormat:'yyyy-LL-dd HH:mm:ss' }}
@@ -22,8 +22,8 @@
       </ng-container>
 
       <ng-container matColumnDef="updatedAt">
-        <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by updatedAt">
-          Updated At
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          {{ 'custom.table.header.updated_at' | translate }}
         </mat-header-cell>
         <mat-cell *matCellDef="let element">
           {{ element.updatedAt | dateTimeToFormat:'yyyy-LL-dd HH:mm:ss' }}

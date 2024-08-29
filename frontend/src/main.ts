@@ -17,6 +17,8 @@ import TranslateModuleFacade from '@app/core/application/translator/TranslateMod
 import { environment } from './environments/environment';
 import { AppComponent } from '@app/app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatPaginatorIntl } from '@angular/material/paginator';
+import PaginatorIntl from '@app/core/application/pagination/paginator-intl';
 
 configure({
   enforceActions: 'never',
@@ -32,6 +34,7 @@ registerLocaleData(localePl);
 const providers: Array<Provider | EnvironmentProviders> = [
   { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   { provide: LOCALE_ID, useValue: environment.defaultLanguage },
+  { provide: MatPaginatorIntl, useClass: PaginatorIntl },
   provideAnimationsAsync(),
   importProvidersFrom(
     IonicModule.forRoot({}),

@@ -1,4 +1,12 @@
 {
+  "paginator": {
+    "with_label": "z",
+    "first_page_label": "Pierwsza strona",
+    "last_page_label": "Ostatnia strona",
+    "next_page_label": "Następna",
+    "previous_page_label": "Poprzednia",
+    "items_per_page_label": "Pozycji na stronę"
+  },
   "admin_client": {
     "common_validation_error": "Błąd walidacji!"
   },
@@ -30,6 +38,13 @@
         "tel_label": "Telefon",
         "tel_placeholder": "888-888-8888",
         "save_label": "Zapisz"
+      }
+    },
+    "table": {
+      "header": {
+        "name": "Nazwa",
+        "created_at": "Utworzono",
+        "updated_at": "Zmodyfikowano"
       }
     }
   }
