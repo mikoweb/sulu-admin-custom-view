@@ -563,7 +563,7 @@ ${t2}`;
 
       const hashHandler = (ev) => {
         SuluAction.clearActions().then(() => {
-          SuluLayout.clearDashboardView().then(() => {
+          SuluLayout.prepareCustomView().then(() => {
             hashChangeHandler(ev, this.routes);
           });
         });
@@ -571,7 +571,7 @@ ${t2}`;
 
       const loadHandler = (ev) => {
         SuluAction.clearActions().then(() => {
-          SuluLayout.clearDashboardView().then(() => {
+          SuluLayout.prepareCustomView().then(() => {
             hashChangeHandler(ev, this.routes, true);
           });
         });

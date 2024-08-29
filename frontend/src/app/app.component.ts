@@ -11,6 +11,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { environment } from '../environments/environment';
 import AppRouter from '@app/shared/infrastructure/routes/app-router';
 import SuluLayout from '@app/shared/ui/sulu/sulu-layout';
+import TranslatorService from '@app/core/application/translator/TranslatorService';
 
 @Component({
   selector: 'app-root',
@@ -23,6 +24,7 @@ export class AppComponent {
     appRef: ApplicationRef,
     private readonly translate: TranslateService,
     private readonly appRouter: AppRouter,
+    private readonly translator: TranslatorService,
   ) {
     this.initApp(appRef);
   }
@@ -32,14 +34,17 @@ export class AppComponent {
     commandBusLoader();
     const commandBus = inject(CommandBus);
 
-    setTimeout(() => {
-      SuluLayout.changeSearchNavigationLink('Dashboard', 'su-desktop');
-    }, 1000);
-
     this.appRouter.init();
 
     CustomElementRegistry.init(appRef);
     await import('../import-global-elements');
+
+    setTimeout(async () => {
+      await SuluLayout.changeSearchNavigationLink(
+        await this.translator.get('sulu.dashboard'),
+        'su-desktop'
+      );
+    }, 50);
 
     // place where you can run global command
 

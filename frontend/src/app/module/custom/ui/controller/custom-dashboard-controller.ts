@@ -15,7 +15,7 @@ export default class CustomDashboardController {
 
   public async showDashboard(): Promise<void> {
     SuluAction.addAction(toolbarButtonHelp(await this.getHelpLabel()));
-    SuluLayout.updateDashboardView(`<app-custom-dashboard-view></app-custom-dashboard-view>`);
+    SuluLayout.prepareCustomView(`<app-custom-dashboard-view></app-custom-dashboard-view>`, true);
   }
 
   private async getHelpLabel(): Promise<string> {

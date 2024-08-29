@@ -11,6 +11,7 @@
     "common_validation_error": "Błąd walidacji!"
   },
   "sulu": {
+    "dashboard": "Dashboard",
     "toolbar": {
       "button_help": {
         "label": "Pomoc"

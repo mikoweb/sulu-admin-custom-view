@@ -15,12 +15,12 @@ export default class CustomTabController {
 
   public async showTab1(id: string): Promise<void> {
     SuluAction.addAction(toolbarButtonHelp(await this.getHelpLabel()));
-    SuluLayout.updateTabView(`<app-custom-tab1-view></app-custom-tab1-view>`);
+    SuluLayout.prepareCustomView(`<app-custom-tab1-view></app-custom-tab1-view>`, true);
   }
 
   public async showTab2(id: string): Promise<void> {
     SuluAction.addAction(toolbarButtonHelp(await this.getHelpLabel()));
-    SuluLayout.updateTabView(`<app-custom-tab2-view></app-custom-tab2-view>`);
+    SuluLayout.prepareCustomView(`<app-custom-tab2-view></app-custom-tab2-view>`, true);
   }
 
   private async getHelpLabel(): Promise<string> {
