@@ -4,3 +4,6 @@ sulu_admin:
             routes:
                 list: admin_api_custom_tab_index
                 detail: admin_api_custom_tab_show
+        custom_table:
+            routes:
+                detail: admin_api_custom_table_show

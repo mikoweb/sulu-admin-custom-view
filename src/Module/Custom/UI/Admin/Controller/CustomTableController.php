@@ -8,6 +8,7 @@ use App\Core\UI\Admin\Controller\AbstractAdminRestController;
 use App\Core\UI\Dto\Api\Response\ApiDoc\PaginationApiModel;
 use App\Module\Custom\Application\Interaction\Query\Admin\AskForTablePaginatedList\AskForTablePaginatedListQuery;
 use App\Module\Custom\Domain\Admin\Resource\CustomTableResource;
+use App\Module\Custom\Domain\Entity\Sample;
 use App\Module\Custom\UI\Admin\Dto\CustomTableListItemDto;
 use App\Module\Custom\UI\Admin\Dto\CustomTableParamsDto;
 use Nelmio\ApiDocBundle\Annotation\Model;
@@ -49,5 +50,11 @@ class CustomTableController extends AbstractAdminRestController implements Secur
             PaginationRequest::createFromRequest($request),
             $paramsDto ?? new CustomTableParamsDto(),
         )));
+    }
+
+    #[OA\Tag(name: 'Custom Table')]
+    public function show(Sample $sample): Response
+    {
+        return $this->json($sample, context: ['groups' => ['admin_read', 'timestampable']]);
     }
 }

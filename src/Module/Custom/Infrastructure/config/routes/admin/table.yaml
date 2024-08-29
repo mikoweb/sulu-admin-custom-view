@@ -2,3 +2,8 @@ admin_api_custom_table_index:
     path: /table
     controller: App\Module\Custom\UI\Admin\Controller\CustomTableController::index
     methods: [GET]
+
+admin_api_custom_table_show:
+    path: /table/{id}
+    controller: App\Module\Custom\UI\Admin\Controller\CustomTableController::show
+    methods: [GET]
