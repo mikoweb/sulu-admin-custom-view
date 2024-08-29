@@ -15,7 +15,12 @@ export default class Router {
     this.router.add(path, handler);
   }
 
-  public go(path: string): void {
-    this.router.go(path);
+  public go(href: string): void {
+    const path = document.location.href.split('#')[0];
+    const hash = href.startsWith('/') ? href : `/${href}`;
+    const url = `${path}#${hash}`;
+
+    document.location.href = url;
+    history.pushState({}, '', url);
   }
 }

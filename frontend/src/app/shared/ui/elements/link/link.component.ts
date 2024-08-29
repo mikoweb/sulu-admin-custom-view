@@ -1,5 +1,4 @@
 import { Component, ElementRef, Input, OnInit, ViewEncapsulation } from '@angular/core';
-import PaginationConst from '@app/core/domain/pagination/pagination-const';
 import Router from '@app/core/application/router/router';
 
 @Component({
