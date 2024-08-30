@@ -3,6 +3,7 @@ import CustomTableController from '@app/module/custom/ui/controller/custom-table
 import CustomTabController from '@app/module/custom/ui/controller/custom-tab-controller';
 import Router from '@app/core/application/router/router';
 import CustomDashboardController from '@app/module/custom/ui/controller/custom-dashboard-controller';
+import NormalTableController from '@app/module/custom/ui/controller/normal-table-controller';
 
 @Injectable({
   providedIn: 'root',
@@ -13,6 +14,7 @@ export default class CustomRouter {
     private readonly customDashboard: CustomDashboardController,
     private readonly customTabController: CustomTabController,
     private readonly customTableController: CustomTableController,
+    private readonly normalTableController: NormalTableController,
   ) {
   }
 
@@ -31,6 +33,10 @@ export default class CustomRouter {
 
     this.router.define('/custom/table', () => {
       this.customTableController.showTable();
+    });
+
+    this.router.define('/custom/sample', () => {
+      this.normalTableController.transformTable();
     });
   }
 }

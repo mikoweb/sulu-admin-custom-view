@@ -28,3 +28,8 @@ CustomDashboardViewComponent.register();
 
 import { CustomTableViewComponent } from '@app/module/custom/ui/view/custom-table-view/custom-table-view.component';
 CustomTableViewComponent.register();
+
+import {
+  NormalTableActionsComponent
+} from '@app/module/custom/ui/elements/normal-table-actions/normal-table-actions.component';
+NormalTableActionsComponent.register();

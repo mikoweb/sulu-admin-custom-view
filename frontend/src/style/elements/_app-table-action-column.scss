@@ -1,0 +1,18 @@
+@mixin app-table-action-column-base {
+  max-width: 85px;
+  text-align: center;
+
+  *[class*=text-box--] {
+    color: #fff;
+  }
+}
+
+table[class*=table--] {
+  tr *[class*=shrink--]:nth-child(-n+3) {
+    @include app-table-action-column-base;
+  }
+}
+
+.app-table-action-column {
+  @include app-table-action-column-base;
+}

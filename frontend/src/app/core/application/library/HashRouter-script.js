@@ -7,6 +7,7 @@
 import SuluAction from '@app/shared/ui/sulu/sulu-action';
 import SuluLayout from '@app/shared/ui/sulu/sulu-layout';
 import { environment } from '../../../../environments/environment';
+import SuluTable from '@app/shared/ui/sulu/sulu-table';
 
 var HashRouter = (() => {
   var __defProp = Object.defineProperty;
@@ -474,10 +475,15 @@ ${t2}`;
   // src/utils/RouterUtils.js
   function getHashPath(href) {
     href = Stringer_exports.substringAfter(href, "#");
+
     return cleanPath(href);
   }
+
   function cleanPath(path) {
-    return Stringer_exports.strip(path, " #");
+    const a = document.createElement('a');
+    a.href = Stringer_exports.strip(path, " #");
+
+    return a.pathname;
   }
 
   // src/utils/Route.js
@@ -562,6 +568,7 @@ ${t2}`;
       };
 
       const hashHandler = (ev) => {
+        SuluTable.clearObserveActionColumns();
         SuluAction.clearActions().then(() => {
           SuluLayout.prepareCustomView().then(() => {
             hashChangeHandler(ev, this.routes);
@@ -570,6 +577,7 @@ ${t2}`;
       };
 
       const loadHandler = (ev) => {
+        SuluTable.clearObserveActionColumns();
         SuluAction.clearActions().then(() => {
           SuluLayout.prepareCustomView().then(() => {
             hashChangeHandler(ev, this.routes, true);

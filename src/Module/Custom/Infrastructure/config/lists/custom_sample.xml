@@ -6,6 +6,10 @@
             <field-name>id</field-name>
             <entity-name>App\Module\Custom\Domain\Entity\Sample</entity-name>
         </property>
+        <property name="action" visibility="always" translation="[action]" sortable="false" width="shrink">
+            <field-name>id</field-name>
+            <entity-name>App\Module\Custom\Domain\Entity\Sample</entity-name>
+        </property>
         <property name="name" visibility="always" searchability="yes" translation="admin.common.property.name">
             <field-name>name</field-name>
             <entity-name>App\Module\Custom\Domain\Entity\Sample</entity-name>

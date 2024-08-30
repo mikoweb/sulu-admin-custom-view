@@ -12,6 +12,7 @@
   },
   "sulu": {
     "dashboard": "Dashboard",
+    "action_column": "Akcja",
     "toolbar": {
       "button_help": {
         "label": "Pomoc"

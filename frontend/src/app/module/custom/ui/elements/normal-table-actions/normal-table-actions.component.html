@@ -1,0 +1,23 @@
+<div class="app-normal-table-actions">
+  <ion-chip [matMenuTriggerFor]="rowAction" color="primary"
+            aria-label="{{ 'custom.table.action.open' | translate }}">
+    <ion-icon name="arrow-forward-circle-outline"
+              aria-label="{{ 'custom.table.action.open' | translate }}"></ion-icon>
+  </ion-chip>
+  <mat-menu #rowAction>
+    <ion-list class="app-table-action-list">
+      <app-link href="/custom/sample/{{ id }}/tab1">
+        <ion-item class="app-table-action-list__link">
+          <ion-icon color="tertiary" aria-hidden="true" name="open-outline" slot="start"></ion-icon>
+          <ion-label>Custom Tab 1</ion-label>
+        </ion-item>
+      </app-link>
+      <app-link href="/custom/sample/{{ id }}/tab2">
+        <ion-item class="app-table-action-list__link">
+          <ion-icon color="tertiary" aria-hidden="true" name="open-outline" slot="start"></ion-icon>
+          <ion-label>Custom Tab 2</ion-label>
+        </ion-item>
+      </app-link>
+    </ion-list>
+  </mat-menu>
+</div>

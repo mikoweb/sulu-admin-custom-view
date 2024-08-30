@@ -109,7 +109,7 @@ export default class SuluLayout {
   public static async changeSearchNavigationLink(
     label: string,
     iconName: string,
-    interval: number = 300
+    interval: number = 100,
   ): Promise<void> {
     const update = async () => {
       const navigation: Element = await this.getPromisedElement('navigation');
