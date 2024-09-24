@@ -11,7 +11,7 @@ abstract class AbstractPaginatedHandler
 {
     public function __construct(
         protected PaginatorInterface $paginator,
-        protected PaginationFactory $paginationFactory
+        protected PaginationFactory $paginationFactory,
     ) {
     }
 
